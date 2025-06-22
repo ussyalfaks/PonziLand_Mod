@@ -1,0 +1,46 @@
+[workspace]
+
+members = [
+    "crates/chaindata/*",
+    "crates/ekubo",
+    "crates/indexer",
+    "crates/torii-ingester",
+    "crates/migrations",
+    "crates/ponziland-models",
+]
+resolver = "2"
+edition = "2024"
+
+[workspace.lints.clippy]
+pedantic = { level = "warn", priority = -1 }
+module_name_repetitions = "allow"
+
+[workspace.dependencies]
+ekubo_sdk = "0.1.20"
+starknet = "0.14.0"
+thiserror = "2.0.12"
+tokio = "1"
+trait-variant = "0.1.2"
+uint = "0.10.0"
+reqwest = "0.12.15"
+serde = "1.0.219"
+url = "2.5.4"
+mockito = "1.7.0"
+axum = "0.8.3"
+tracing = "0.1.41"
+confique = "0.3.0"
+tracing-subscriber = "0.3.19"
+tower-http = "0.6.2"
+http = "1.1.1"
+serde_json = "1"
+anyhow = "1.0.98"
+sea-orm = "1.1.0"
+sqlx = "0.8.5"
+clap = "4.5.37"
+chrono = "0.4.40"
+uuid = "1"
+async-trait = "0.1.88"
+
+# Improve performance of sqlx macros
+[profile.dev.package.sqlx-macros]
+opt-level = 3

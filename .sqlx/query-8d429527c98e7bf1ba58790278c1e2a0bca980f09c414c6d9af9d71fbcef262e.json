@@ -1,0 +1,33 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n            INSERT INTO land_stake (\n                id, at, location, last_pay_time, amount\n            )\n            VALUES ($1, $2, $3, $4, $5)\n            RETURNING id\n            ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Text",
+        "Timestamp",
+        "Int4",
+        "Timestamp",
+        {
+          "Custom": {
+            "name": "uint_256",
+            "kind": {
+              "Domain": "Numeric"
+            }
+          }
+        }
+      ]
+    },
+    "nullable": [
+      false
+    ]
+  },
+  "hash": "8d429527c98e7bf1ba58790278c1e2a0bca980f09c414c6d9af9d71fbcef262e"
+}

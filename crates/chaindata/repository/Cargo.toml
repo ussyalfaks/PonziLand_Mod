@@ -1,0 +1,24 @@
+[package]
+name = "chaindata-repository"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+async-trait.workspace = true
+chrono.workspace = true
+sqlx = { workspace = true, features = [
+    "derive",
+    "runtime-tokio",
+    "postgres",
+    "uuid",
+    "chrono",
+    "bigdecimal",
+] }
+chaindata-models = { path = "../models" }
+thiserror.workspace = true
+
+[dev-dependencies]
+migrations = { path = "../../migrations" }
+
+[lints]
+workspace = true

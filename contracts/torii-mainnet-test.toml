@@ -1,0 +1,30 @@
+world_address = "0x076b1269937debcb70fb5f59dea1c6f9ce24c9415b23876f623385933a6d2681"
+rpc = "https://api.cartridge.gg/x/starknet/mainnet"
+explorer = false
+
+[events]
+raw = true
+
+[sql]
+historical = [
+    "ponzi_land-AddressAuthorizedEvent",
+    "ponzi_land-AddressRemovedEvent",
+
+    "ponzi_land-AuctionFinishedEvent",
+    "ponzi_land-LandBoughtEvent",
+    "ponzi_land-LandNukedEvent",
+
+    "ponzi_land-NewAuctionEvent",
+    "ponzi_land-RemainingStakeEvent",
+
+    "ponzi_land-VerifierUpdatedEvent",
+]
+
+
+[indexing]
+contracts = [
+    "erc20:0x05735fa6be5dd248350866644c0a137e571f9d637bb4db6532ddd63a95854b58", # nftSTRK
+    "erc20:0x40025cec149bf1f58d2e34a6924605b571a5fce7b798a47ec52cfbd3ff68b6e",  # eWNT
+    "erc20:0x78c1138aa1cfd27436b26279d5ac4e3f8f5a432927d85d22b2a2e7c0e5528b4",  # eQQ
+    "erc20:0x74ad80778e07102902abdec71e0161023b45d1204c29e2c4ec3befab3bb82f5",  # eSG
+]

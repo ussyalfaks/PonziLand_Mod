@@ -1,0 +1,30 @@
+[package]
+name = "ekubo"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+tracing = ["dep:tracing"]
+
+[dependencies]
+safe_decimal_macro = { git = "https://github.com/invariant-labs/decimal.git" }
+ekubo_sdk.workspace = true
+starknet.workspace = true
+thiserror.workspace = true
+trait-variant.workspace = true
+uint.workspace = true
+reqwest = { workspace = true, features = ["json"] }
+serde = { workspace = true, features = ["derive"] }
+url.workspace = true
+tracing = { optional = true, workspace = true }
+chrono = "0.4.40"
+
+[dev-dependencies]
+mockito.workspace = true
+tokio = { workspace = true, features = ["full"] }
+
+[[example]]
+name = "get_price"
+
+[lints]
+workspace = true

@@ -1,0 +1,36 @@
+[package]
+name = "chaindata-service"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+
+[dependencies]
+starknet.workspace = true
+serde = { workspace = true, features = ["derive"] }
+torii-ingester = { path = "../../torii-ingester" }
+tokio.workspace = true
+serde_json.workspace = true
+sqlx = { workspace = true, features = [
+    "derive",
+    "runtime-tokio",
+    "postgres",
+    "uuid",
+    "chrono",
+    "bigdecimal",
+] }
+chrono.workspace = true
+uuid = { workspace = true, features = ["serde"] }
+async-trait.workspace = true
+futures-util = "0.3.31"
+tokio-stream = "0.1.17"
+tracing.workspace = true
+thiserror.workspace = true
+migrations = { path = "../../migrations" }
+ponziland-models = { path = "../../ponziland-models" }
+chaindata-repository = { path = "../repository" }
+chaindata-models = { path = "../models" }
+reqwest.workspace = true
+
+[lints]
+workspace = true

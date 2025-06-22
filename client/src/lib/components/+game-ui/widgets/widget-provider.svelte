@@ -1,0 +1,62 @@
+<script lang="ts">
+  import Draggable from '$lib/components/ui/draggable.svelte';
+  import { widgetsStore } from '$lib/stores/widgets.store';
+  import WidgetLandHud from './hud/widget-land-hud.svelte';
+  import WidgetLandInfo from './land-info/widget-land-info.svelte';
+  import WidgetMyLands from './my-lands/widget-my-lands.svelte';
+  import WidgetSettings from './settings/widget-settings.svelte';
+  import WidgetWallet from './wallet/widget-wallet.svelte';
+  import WidgetEntityUpdate from './entity-update/widget-entity-update.svelte';
+  import WidgetMarket from './market/widget-market.svelte';
+  import WidgetHelp from './help/widget-help.svelte';
+  import WidgetTutorial from './tutorial/widget-tutorial.svelte';
+  import WidgetNftLink from './nft-link/widget-nft-link.svelte';
+  import WidgetGuild from './guild/widget-guild.svelte';
+  import WidgetLeaderboard from './leaderboard/Leaderboard.svelte';
+  import WidgetNotifications from './notifications/widget-notifications.svelte';
+  import WidgetMiniMap from './mini-map/widget-mini-map.svelte';
+</script>
+
+{#each Object.entries($widgetsStore) as [id, widget]}
+  {#if widget.isOpen}
+    <Draggable
+      {id}
+      type={widget.type}
+      initialPosition={widget.position}
+      initialDimensions={widget.dimensions}
+      bind:isMinimized={widget.isMinimized}
+      disableResize={widget.disableResize}
+    >
+      {@const type = widget.type}
+      {#if type === 'wallet'}
+        <WidgetWallet />
+      {:else if type === 'land-hud'}
+        <WidgetLandHud />
+      {:else if type === 'land-info' && widget.data}
+        <WidgetLandInfo data={widget.data} />
+      {:else if type === 'settings'}
+        <WidgetSettings />
+      {:else if type === 'my-lands'}
+        <WidgetMyLands />
+      {:else if type === 'entity-update'}
+        <WidgetEntityUpdate />
+      {:else if type === 'market'}
+        <WidgetMarket />
+      {:else if type === 'help'}
+        <WidgetHelp />
+      {:else if type === 'tutorial'}
+        <WidgetTutorial />
+      {:else if type === 'nft-link'}
+        <WidgetNftLink />
+      {:else if type === 'guild'}
+        <WidgetGuild />
+      {:else if type === 'leaderboard'}
+        <WidgetLeaderboard />
+      {:else if type === 'notifications'}
+        <WidgetNotifications />
+      {:else if type === 'mini-map'}
+        <WidgetMiniMap />
+      {/if}
+    </Draggable>
+  {/if}
+{/each}

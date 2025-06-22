@@ -1,0 +1,15 @@
+[package]
+name = "ponziland-models"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { workspace = true, features = ["derive"] }
+torii-ingester = { path = "../torii-ingester" }
+serde_json = { workspace = true }
+serde-aux = "4.7.0"
+starknet.workspace = true
+chrono.workspace = true
+
+[lints]
+workspace = true

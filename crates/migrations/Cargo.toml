@@ -1,0 +1,26 @@
+[package]
+name = "migrations"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+path = "./lib.rs"
+
+[dependencies]
+tokio = { workspace = true, features = ["full"] }
+sqlx = { workspace = true, features = [
+    "derive",
+    "runtime-tokio",
+    "postgres",
+    "tls-native-tls",
+] }
+tracing-subscriber.workspace = true
+clap = { workspace = true, features = ["derive"] }
+tracing.workspace = true
+
+[[bin]]
+name = "migrations"
+path = "./main.rs"
+
+[lints]
+workspace = true

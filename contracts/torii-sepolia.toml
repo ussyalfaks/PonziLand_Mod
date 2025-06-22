@@ -1,0 +1,37 @@
+world_address = "0x051b8efb6eeaeff501ebbe78758cc08c6cbaf9e13ca09812ba11e505f818d457"
+rpc = "https://api.cartridge.gg/x/starknet/sepolia"
+explorer = false
+
+[events]
+raw = true
+
+[sql]
+historical = [
+    "ponzi_land-AddressAuthorizedEvent",
+    "ponzi_land-AddressRemovedEvent",
+
+    "ponzi_land-AuctionFinishedEvent",
+    "ponzi_land-LandBoughtEvent",
+    "ponzi_land-LandNukedEvent",
+
+    "ponzi_land-NewAuctionEvent",
+    "ponzi_land-RemainingStakeEvent",
+
+    "ponzi_land-VerifierUpdatedEvent",
+
+    "ponzi_land-Land",
+    "ponzi_land-LandStake",
+]
+
+
+[indexing]
+contracts = [
+    "erc20:0x071de745c1ae996cfd39fb292b4342b7c086622e3ecf3a5692bd623060ff3fa0", # eSTRK
+    "erc20:0x0335e87d03baaea788b8735ea0eac49406684081bb669535bb7074f9d3f66825", # ePAPER
+    "erc20:0x04230d6e1203e0d26080eb1cf24d1a3708b8fc085a7e0a4b403f8cc4ec5f7b7b", # eLORDS
+    "erc20:0x07031b4db035ffe8872034a97c60abd4e212528416f97462b1742e1f6cf82afe", # eBROTHER
+    "erc20:0x01d321fcdb8c0592760d566b32b707a822b5e516e87e54c85b135b0c030b1706", # ePAL
+    "erc20:0x051963b44627ae242dcf2bf846b38cca391688c1634a190eaeaf29c63890515e", # eWNT
+    "erc20:0x041c9a2f8a8439ce6a9e5e670ba7cd62b214f52547326dece6de981bc1fd0c11", # eQQ
+    "erc20:0x05bb176eadd857d0226042f3e317efcc9b2ea4de0836dcc0ae4224c3ee820cc1", # eSG
+]

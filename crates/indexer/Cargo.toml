@@ -1,0 +1,55 @@
+[package]
+name = "indexer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+#tower-http = { workspace = true, features = ["cors"] }
+apalis = { version = "0.7.0", features = [
+    "tracing",
+    "catch-panic",
+    "retry",
+    "limit",
+    "prometheus",
+] }
+chrono.workspace = true
+apalis-cron = "0.7.0"
+chaindata-service = { path = "../chaindata/service" }
+axum = { workspace = true, features = [
+    "ws",
+    "macros",
+] } # We need to add websocket support
+confique = { workspace = true, features = ["toml"] }
+serde = { workspace = true, features = ["derive"] }
+tokio = { workspace = true, features = ["full"] }
+tokio-util = "0.7.14"
+tracing.workspace = true
+tracing-subscriber.workspace = true
+metrics-exporter-prometheus = "0.16.2"
+apalis-core = "0.7.0"
+tower = "0.5.2"
+anyhow.workspace = true
+ekubo = { path = "../ekubo" }
+url = { workspace = true, features = ["serde"] }
+starknet.workspace = true
+arc-swap = "1.7.1"
+metrics = "0.24.1"
+pin-project-lite = "0.2.16"
+tower-http = { workspace = true, features = ["cors"] }
+http = { workspace = true }
+sqlx = { workspace = true, features = [
+    "derive",
+    "runtime-tokio",
+    "tls-native-tls",
+    "postgres",
+    "uuid",
+    "chrono",
+    "bigdecimal",
+] }
+dotenv = "0.15.0"
+migrations = { path = "../migrations" }
+chaindata-repository = { path = "../chaindata/repository" }
+serde_json.workspace = true
+
+[lints]
+workspace = true

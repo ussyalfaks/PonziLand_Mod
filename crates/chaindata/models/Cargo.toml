@@ -1,0 +1,28 @@
+[package]
+name = "chaindata-models"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+sqlx = { workspace = true, features = [
+    "derive",
+    "runtime-tokio",
+    "postgres",
+    "uuid",
+    "chrono",
+    "bigdecimal",
+] }
+uuid = { workspace = true, features = ["serde"] }
+ponziland-models = { path = "../../ponziland-models" }
+serde = { workspace = true, features = ["derive"] }
+torii-ingester = { path = "../../torii-ingester" }
+num-bigint = "0.4.6"
+num-traits = "0.2.19"
+chrono.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+migrations = { path = "../../migrations" }
+
+[lints]
+workspace = true
