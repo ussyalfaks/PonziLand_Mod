@@ -35,8 +35,11 @@ Clone the repo and run the client locally with the mainnet contract:
 
 ```bash
 git clone git@github.com:RuneLabsxyz/PonziLand.git
-cd PonziLand/client
+
+cd PonziLand_Mod/client
+
 bun install
+
 bun dev:mainnet
 ```
 
