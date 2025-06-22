@@ -70,14 +70,6 @@ PonziLand is a game of strategy, timing, and social maneuvering—where every da
 - `crates/` – Rust backend and models, including the meta-indexer for Starknet data.
 - `playtest/` – Scripts and tools for playtesting and analytics.
 
-See [GAMEJAM.md](GAMEJAM.md) for a detailed guide on extending the UI with custom widgets.
-
----
-
-## 🧩 Widget System
-
-PonziLand's UI is built around a flexible widget system. You can add new widgets to the game interface without touching core logic. See the [Widget System Overview](GAMEJAM.md#widget-system-overview) for details and examples.
-
 ---
 
 ## ⚙️ Architecture
@@ -99,15 +91,6 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for more technical details.
 
 For a full list of smart contract actions and view functions, see [contracts/DEVELOPMENT.md](contracts/DEVELOPMENT.md).
 
----
-
-## 🛠️ Contributing
-
-- Fork and clone the repo.
-- See [GAMEJAM.md](GAMEJAM.md) for widget and UI modding.
-- Join the [Discord](https://discord.gg/ponziland) for support and collaboration.
-
----
 
 ## 📣 Community & Links
 
